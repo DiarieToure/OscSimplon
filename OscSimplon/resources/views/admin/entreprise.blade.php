@@ -8,6 +8,8 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="app/public/admin.css">
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     @include('admin.admincss')
@@ -18,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="assets/images/favicon.png" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     
@@ -53,7 +56,7 @@
                   <input type="text" class="form-control mt-3" placeholder="registre entreprise" name="registre">
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-5">Ajouter</button>
+                <button type="submit" class="btn btn-primary mt-5"> Ajouter</button>
               </div>
           </form>
         </div>
@@ -67,7 +70,7 @@
                 <th scope="col">localite</th>
                 <th scope="col">details</th>
                 <th scope="col">Suppression</th>
-                <th scope="col">Modification</th>
+                <th scope="col">Modification </th>
               
               </tr>
             </thead>
@@ -80,26 +83,7 @@
                 <td class="text-light">{{$data->localite}}</td>
                 <td><a class="text-primary" href="">Voir plus</a></td>
                 <td><a class="text-danger" href="{{url('/deleteEntreprise',$data->id)}}">Supprimer</a></td>
-                <td><a class="text-light" href="" id="updating">Modifier</a></td>
-                <form action="{{url('/updateEntreprise')}}" method="POST">
-                  @csrf
-                  <div class="form-row">
-                    <div class="col">
-                      <input type="text" class="form-control mt-3" placeholder="Nom entreprise" name="nameEntreprise">
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control mt-3" placeholder="localite entreprise" name="localite">
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control mt-3" placeholder="ninea entreprise" name="ninea">
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control mt-3" placeholder="registre entreprise" name="registre">
-                    </div>
-    
-                    <button type="submit" class="btn btn-primary mt-5">Ajouter</button>
-                  </div>
-              </form>
+                <td><a class="text-light" href="{{url('/entrepriseUpdate',$data->id)}}"> Modifier</a> </td>
               </tr>
             </tbody>
             @endforeach
@@ -137,6 +121,7 @@
 
 
 
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
@@ -149,6 +134,8 @@
     <!-- End custom js for this page -->
 
     {{-- Jquery --}}
+
+   
 
   </body>
 </html>

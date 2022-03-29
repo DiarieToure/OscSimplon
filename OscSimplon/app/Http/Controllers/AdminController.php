@@ -49,6 +49,20 @@ class AdminController extends Controller
        return redirect()->back();
    }
 
-
-  
+   public function entrepriseUpdate($id)
+   {
+       $data=entreprise::find($id);
+        return view('admin.entrepriseUpdate',compact('data')) ;
+   }
+   public function updateEntreprise(Request $request,$id)
+   {
+        $data=entreprise::find($id);
+        $data->nameEntreprise=$request->nameEntreprise;
+        $data->localite=$request->localite;
+        $data->ninea=$request->ninea;
+        $data->registre=$request->registre;
+        $data->save();
+        return redirect()->back();
+       
+   }
 }

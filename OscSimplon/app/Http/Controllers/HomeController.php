@@ -11,7 +11,8 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $data=Entreprise::all();
+        return view('home',compact('data'));
     }
 
     
@@ -23,7 +24,8 @@ class HomeController extends Controller
         }
         else
         {
-            return view('home');
+            $data=Entreprise::all();
+            return view('home',compact('data'));
         }
     }
 

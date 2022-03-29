@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use Illuminate\Routing\Route as RoutingRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,8 @@ Route::get("/deleteUser/{id}",[AdminController::class,"deleteUser"]);
 Route::get("/entreprise",[AdminController::class,"entreprise"]);
 Route::post("/updateEntreprise",[AdminController::class,"update"]);
 Route::get("deleteEntreprise/{id}",[AdminController::class,"deleteEntreprise"]);
-
-
+Route::get("/entrepriseUpdate/{id}",[AdminController::class,"entrepriseUpdate"]);
+Route::post("/updateEntreprise/{id}",[AdminController::class,"updateEntreprise"]);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

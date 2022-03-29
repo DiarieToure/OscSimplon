@@ -25,6 +25,9 @@ Route::get("/user",[AdminController::class,"user"]);
 Route::get("/deleteUser/{id}",[AdminController::class,"deleteUser"]);
 // manage of entreprise part
 Route::get("/entreprise",[AdminController::class,"entreprise"]);
+Route::post("/updateEntreprise",[AdminController::class,"update"]);
+Route::get("deleteEntreprise/{id}",[AdminController::class,"deleteEntreprise"]);
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

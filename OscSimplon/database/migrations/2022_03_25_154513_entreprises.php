@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('entreprises', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nameEntreprise');
             $table->string('localite')->unique();
             $table->string('ninea',15);
             $table->string('registre',10);
+            $table->timestamps();
          
         });
     }

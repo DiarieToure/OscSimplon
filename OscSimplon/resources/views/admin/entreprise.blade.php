@@ -81,7 +81,7 @@
                 {{-- <th scope="row">1</th> --}}
                 <td class="text-light">{{$data->nameEntreprise}}</td>
                 <td class="text-light">{{$data->localite}}</td>
-                <td><a class="text-primary" href="">Voir plus</a></td>
+                <td><a class="text-primary" href="{{url('/detailsEntreprise',$data->id)}}">Voir plus</a></td>
                 <td><a class="text-danger" href="{{url('/deleteEntreprise',$data->id)}}">Supprimer</a></td>
                 <td><a class="text-light" href="{{url('/entrepriseUpdate',$data->id)}}"> Modifier</a> </td>
               </tr>

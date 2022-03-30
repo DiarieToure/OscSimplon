@@ -30,6 +30,8 @@ Route::post("/updateEntreprise",[AdminController::class,"update"]);
 Route::get("deleteEntreprise/{id}",[AdminController::class,"deleteEntreprise"]);
 Route::get("/entrepriseUpdate/{id}",[AdminController::class,"entrepriseUpdate"]);
 Route::post("/updateEntreprise/{id}",[AdminController::class,"updateEntreprise"]);
+Route::GET("/detailsEntreprise/{id}",[AdminController::class,"detailsEntreprise"]);
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

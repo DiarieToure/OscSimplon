@@ -35,26 +35,16 @@
       <!-- partial -->
       <section class="row" style="max-width: 70%">
         <div class="col-lg-12 mt-5 ms-5 fw-wrap " >
-          <h3>Modifier une entreprise</h3>
-          <form action=" {{url('/updateEntreprise',$data->id)}}" method="POST">
-              @csrf
-              <div class="form-row">
-                <div class="col">
-                  <input type="text" class="form-control mt-3" placeholder="Nom entreprise" name="nameEntreprise" value="{{$data->nameEntreprise}}">
+            <div class="card" style="width: 18rem; height:10rem">
+                <div class="card-header">
+                  {{$data->nameEntreprise}}
                 </div>
-                <div class="col">
-                  <input type="text" class="form-control mt-3" placeholder="localite entreprise" name="localite"value="{{$data->localite}}">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control mt-3" placeholder="ninea entreprise" name="ninea" value="{{$data->ninea}}">
-                </div>
-                <div class="col">
-                  <input type="text" class="form-control mt-3" placeholder="registre entreprise" name="registre" value="{{$data->registre}}">
-                </div>
-
-                <button type="submit" class="btn btn-primary mt-5" > Enregistrer</button>
-              </div>
-          </form>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">localite : {{$data->localite}}</li>
+                  <li class="list-group-item">Ninea : {{$data->ninea}}</li>
+                  <li class="list-group-item">Registre : {{$data->registre}}</li>
+                </ul>
+            </div>
         </div>
 
     
@@ -92,3 +82,4 @@
 
   </body>
 </html>
+

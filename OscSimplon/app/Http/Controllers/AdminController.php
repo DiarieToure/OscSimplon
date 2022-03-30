@@ -12,7 +12,7 @@ class AdminController extends Controller
     public function User(){
 
         $data=user::all();
-        return view('admin.user',compact('data'));
+         view('admin.user',compact('data')); 
     }
 
 
@@ -65,4 +65,13 @@ class AdminController extends Controller
         return redirect()->back();
        
    }
+
+   //show details 
+
+   public function detailsEntreprise($id)
+   {
+        $data=entreprise::find($id);
+       return view('admin.detailsEntreprise',compact('data'));
+   }
+
 }

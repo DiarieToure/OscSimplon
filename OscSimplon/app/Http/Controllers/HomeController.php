@@ -24,8 +24,8 @@ class HomeController extends Controller
         }
         else
         {
-            $data=Entreprise::all();
-            return view('home',compact('data'));
+           
+            return view('home');
         }
     }
 

@@ -395,12 +395,7 @@ https://templatemo.com/tm-573-eduwell
       </div>
     </div>
 
-    <div> @foreach ($data as $data)
-        {{$data->nameEntreprise}}<br>
-        {{$data->localite}}<br>
-        {{$data->ninea}}<br>
-        {{$data->registre}}<br>
-    @endforeach</div>
+  
   </section>
 
   

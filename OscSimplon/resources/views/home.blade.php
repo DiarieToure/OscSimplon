@@ -37,44 +37,51 @@ https://templatemo.com/tm-573-eduwell
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <nav class="main-nav">
-              {{-- <!-- ***** Logo Start ***** -->
-              <a href="index.html" class="logo">
-                  <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template">
+          <nav class="navbar navbar-expand-lg main-nav d-flex">
+              <!-- ***** Logo Start ***** -->
+              <a href={{url('/home') }} class="navbar-brand " style="color:antiquewhite">
+                <h3>OSC </h3>
               </a>
-              <!-- ***** Logo End ***** --> --}}
+              <!-- ***** Logo End ***** -->
               <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                  <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
-                  <li class="scroll-to-section"><a href="#services">Services</a></li>
-                  {{-- <li class="scroll-to-section"><a href="#courses">Courses</a></li> --}}
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse">
+                <ul class="nav">
+                    <li class="scroll-to-section"><a href="#top" class="active">Accueil</a></li>
+                    <li class="scroll-to-section"><a href="#services">Services</a></li>
+                    {{-- <li class="scroll-to-section"><a href="#courses">Courses</a></li> --}}
+                    
+                    <li class="scroll-to-section"><a href="#Entreprises">Entreprises</a></li> 
+                    <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li> 
+                    <li class="scroll-to-section">
                   
-                  <li class="scroll-to-section"><a href="#Entreprises">Entreprises</a></li> 
-                  <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li> 
-                  <li class="scroll-to-section">
-                
-                
+                  
+  
+                      @if (Route::has('login'))
+                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            @auth
+                            <li><x-app-layout></x-app-layout>
+                            </li> 
+                            @else
+                                <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
+        
+                                @if (Route::has('register'))
+                                  <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a> </li> 
+                                @endif
+                            @endauth
+                        </div>
+                      @endif
+                    </li>
+                </ul>  
 
-                    @if (Route::has('login'))
-                      <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                          @auth
-                          <li><x-app-layout></x-app-layout>
-                          </li> 
-                          @else
-                              <li><a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
-      
-                              @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a> </li> 
-                              @endif
-                          @endauth
-                      </div>
-                    @endif
-                  </li>
-              </ul>        
-              {{-- <a class='menu-trigger'>
-                  <span>Menu</span>
-              </a> --}}
-              <!-- ***** Menu End ***** -->
+              </div>
+                  
+            {{-- <a class='menu-trigger'>
+                <span>Menu</span>
+            </a> --}}
+            <!-- ***** Menu End ***** -->
           </nav>
         </div>
       </div>
